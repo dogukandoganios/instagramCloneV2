@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		634A1804289AA12F0045814F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1803289AA12F0045814F /* AppDelegate.swift */; };
 		634A1806289AA12F0045814F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1805289AA12F0045814F /* SceneDelegate.swift */; };
-		634A1808289AA12F0045814F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1807289AA12F0045814F /* ViewController.swift */; };
+		634A1808289AA12F0045814F /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1807289AA12F0045814F /* SingInVC.swift */; };
 		634A180B289AA12F0045814F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634A1809289AA12F0045814F /* Main.storyboard */; };
 		634A180D289AA1310045814F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634A180C289AA1310045814F /* Assets.xcassets */; };
 		634A1810289AA1310045814F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634A180E289AA1310045814F /* LaunchScreen.storyboard */; };
 		634A181B289AA1310045814F /* instagramCloneV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A181A289AA1310045814F /* instagramCloneV2Tests.swift */; };
 		634A1825289AA1310045814F /* instagramCloneV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1824289AA1310045814F /* instagramCloneV2UITests.swift */; };
 		634A1827289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1826289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift */; };
+		634E79A8289AA85A00D996C2 /* ApperanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E79A7289AA85A00D996C2 /* ApperanceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		634A1800289AA12F0045814F /* instagramCloneV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramCloneV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A1803289AA12F0045814F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		634A1805289AA12F0045814F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		634A1807289AA12F0045814F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		634A1807289AA12F0045814F /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
 		634A180A289AA12F0045814F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		634A180C289AA1310045814F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634A180F289AA1310045814F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		634A1820289AA1310045814F /* instagramCloneV2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instagramCloneV2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		634A1824289AA1310045814F /* instagramCloneV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramCloneV2UITests.swift; sourceTree = "<group>"; };
 		634A1826289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramCloneV2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		634E79A7289AA85A00D996C2 /* ApperanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApperanceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,9 @@
 		634A1802289AA12F0045814F /* instagramCloneV2 */ = {
 			isa = PBXGroup;
 			children = (
-				634A1803289AA12F0045814F /* AppDelegate.swift */,
-				634A1805289AA12F0045814F /* SceneDelegate.swift */,
-				634A1807289AA12F0045814F /* ViewController.swift */,
+				634A1834289AA2C20045814F /* Delegate */,
+				634A1833289AA2B50045814F /* ViewController */,
+				634A1835289AA2E80045814F /* Model */,
 				634A1809289AA12F0045814F /* Main.storyboard */,
 				634A180C289AA1310045814F /* Assets.xcassets */,
 				634A180E289AA1310045814F /* LaunchScreen.storyboard */,
@@ -125,6 +127,31 @@
 				634A1826289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift */,
 			);
 			path = instagramCloneV2UITests;
+			sourceTree = "<group>";
+		};
+		634A1833289AA2B50045814F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				634A1807289AA12F0045814F /* SingInVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		634A1834289AA2C20045814F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				634A1803289AA12F0045814F /* AppDelegate.swift */,
+				634A1805289AA12F0045814F /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		634A1835289AA2E80045814F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				634E79A7289AA85A00D996C2 /* ApperanceModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634A1808289AA12F0045814F /* ViewController.swift in Sources */,
+				634A1808289AA12F0045814F /* SingInVC.swift in Sources */,
 				634A1804289AA12F0045814F /* AppDelegate.swift in Sources */,
 				634A1806289AA12F0045814F /* SceneDelegate.swift in Sources */,
+				634E79A8289AA85A00D996C2 /* ApperanceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
