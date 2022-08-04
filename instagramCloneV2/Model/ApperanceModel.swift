@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-func textFieldClass(placeholderText : String, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UITextField{
+func textFieldClass(placeholderText : String,borderWidth : CGFloat, cornerRadius : CGFloat, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UITextField{
     
     let textField = UITextField()
     textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray.withAlphaComponent(0.5)])
-    textField.layer.borderWidth = 1
+    textField.layer.borderWidth = borderWidth
+    textField.layer.cornerRadius = cornerRadius
     textField.layer.borderColor = UIColor.black.cgColor
     textField.frame = CGRect(x: viewWidth * frameX - viewWidth * width / 2, y: viewHeight * frameY - viewHeight * height / 2, width: viewWidth * width, height: viewHeight * height)
     
@@ -23,11 +24,12 @@ func textFieldClass(placeholderText : String, viewWidth : CGFloat, viewHeight : 
     
 }
 
-func buttonClass(titleString : String, titleColor : UIColor, borderWidth : CGFloat, cornerRadius : CGFloat, borderColor : UIColor,backgroundColor : UIColor, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UIButton{
+func buttonClass(titleString : String, titleColor : UIColor, borderWidth : CGFloat, cornerRadius : CGFloat, fontSize : CGFloat, borderColor : UIColor,backgroundColor : UIColor, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UIButton{
     
     let button = UIButton()
     button.setTitle(titleString, for: UIControl.State.normal)
     button.setTitleColor(titleColor, for: UIControl.State.normal)
+    button.titleLabel!.font = UIFont(name: button.titleLabel!.font.fontName, size: viewWidth * fontSize)
     button.layer.borderWidth = borderWidth
     button.layer.borderColor = borderColor.cgColor
     button.layer.backgroundColor = backgroundColor.cgColor
@@ -46,11 +48,37 @@ func imageViewClass(imageName : String, viewWidth : CGFloat, viewHeight : CGFloa
     return imageView
 }
 
-func labelClass(textText : String, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UILabel{
+func labelClass(textText : String, borderWidth : CGFloat, fontSize : CGFloat, textAlgiment : NSTextAlignment, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UILabel{
     
     let text = UILabel()
     text.text = textText
     text.frame = CGRect(x: viewWidth * frameX - viewWidth * width / 2, y: viewHeight * frameY - viewHeight * height / 2, width: viewWidth * width, height: viewHeight * height)
+    text.layer.borderWidth = borderWidth
+    text.font = UIFont(name: text.font.fontName, size: viewWidth * fontSize)
+    text.textAlignment = textAlgiment
     
     return text
+}
+
+func textViewClass(text : String, borderWidth : CGFloat, fontSize : CGFloat, userInteraction : Bool, textAligment : NSTextAlignment, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UITextView{
+    
+    let textView = UITextView()
+    textView.text = text
+    textView.layer.borderWidth = borderWidth
+    textView.font = UIFont(name: textView.font!.fontName, size: viewWidth * fontSize)
+    textView.frame = CGRect(x: viewWidth * frameX - viewWidth * width / 2, y: viewHeight * frameY - viewHeight * height / 2, width: viewWidth * width, height: viewHeight * height)
+    textView.isUserInteractionEnabled = userInteraction
+    textView.textAlignment = textAligment
+    
+    return textView
+}
+
+func segmentedClass(itemArry : [String], selectSegment : Int, viewWidth : CGFloat, viewHeight : CGFloat, frameX : CGFloat, frameY : CGFloat, width : CGFloat, height : CGFloat) -> UISegmentedControl{
+    
+    let segment = UISegmentedControl(items: itemArry)
+    segment.frame = CGRect(x: viewWidth * frameX - viewWidth * width / 2, y: viewHeight * frameY - viewHeight * height / 2, width: viewWidth * width, height: viewHeight * height)
+    segment.selectedSegmentIndex = selectSegment
+    
+    
+    return segment
 }

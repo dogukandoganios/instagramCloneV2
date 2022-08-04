@@ -17,6 +17,9 @@
 		634A1825289AA1310045814F /* instagramCloneV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1824289AA1310045814F /* instagramCloneV2UITests.swift */; };
 		634A1827289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634A1826289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift */; };
 		634E79A8289AA85A00D996C2 /* ApperanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634E79A7289AA85A00D996C2 /* ApperanceModel.swift */; };
+		6366A041289B8DD90005B7CD /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366A040289B8DD90005B7CD /* SingUpVC.swift */; };
+		6366A043289BAA610005B7CD /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366A042289BAA610005B7CD /* PasswordVC.swift */; };
+		6366A045289BB4DF0005B7CD /* EmailOrPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366A044289BB4DF0005B7CD /* EmailOrPhoneVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		634A1824289AA1310045814F /* instagramCloneV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramCloneV2UITests.swift; sourceTree = "<group>"; };
 		634A1826289AA1310045814F /* instagramCloneV2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instagramCloneV2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		634E79A7289AA85A00D996C2 /* ApperanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApperanceModel.swift; sourceTree = "<group>"; };
+		6366A040289B8DD90005B7CD /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
+		6366A042289BAA610005B7CD /* PasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
+		6366A044289BB4DF0005B7CD /* EmailOrPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOrPhoneVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				634A1807289AA12F0045814F /* SingInVC.swift */,
+				6366A040289B8DD90005B7CD /* SingUpVC.swift */,
+				6366A042289BAA610005B7CD /* PasswordVC.swift */,
+				6366A044289BB4DF0005B7CD /* EmailOrPhoneVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -286,7 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				634A1808289AA12F0045814F /* SingInVC.swift in Sources */,
+				6366A043289BAA610005B7CD /* PasswordVC.swift in Sources */,
+				6366A045289BB4DF0005B7CD /* EmailOrPhoneVC.swift in Sources */,
 				634A1804289AA12F0045814F /* AppDelegate.swift in Sources */,
+				6366A041289B8DD90005B7CD /* SingUpVC.swift in Sources */,
 				634A1806289AA12F0045814F /* SceneDelegate.swift in Sources */,
 				634E79A8289AA85A00D996C2 /* ApperanceModel.swift in Sources */,
 			);
