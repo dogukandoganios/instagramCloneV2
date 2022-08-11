@@ -17,6 +17,7 @@ class PasswordVC: UIViewController {
     var checkButton = UIButton()
     var saveLabel = UILabel()
     var nextButton = UIButton()
+    var userName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class PasswordVC: UIViewController {
         view.addGestureRecognizer(tap)
         
         bodyApperance()
+
     }
     
     @objc func dismissKeyboard(){
@@ -45,16 +47,16 @@ class PasswordVC: UIViewController {
         descriptionTextView = textViewClass(text: "Şifreni hatırlayabiliceğimiz için iCloud® cihazlarında girmen gerekmeyecek.", borderWidth: 0, fontSize: 0.035, userInteraction: false, textAligment: .center, viewWidth: width, viewHeight: height, frameX: 0.5, frameY: 0.18, width: 0.7, height: 0.06)
         view.addSubview(descriptionTextView)
         
-        passwordTextField = textFieldClass(placeholderText: "Şifre", borderWidth: 1, cornerRadius: height * 0.05 / 5, viewWidth: width, viewHeight: height, frameX: 0.5, frameY: 0.24, width: 0.7, height: 0.05)
+        passwordTextField = textFieldClass(placeholderText: "Şifre", isSecureTextEntry: true, borderWidth: 1, cornerRadius: height * 0.05 / 5, viewWidth: width, viewHeight: height, frameX: 0.5, frameY: 0.24, width: 0.7, height: 0.05)
         view.addSubview(passwordTextField)
         
-        checkButton = buttonClass(titleString: "", titleColor: .white, borderWidth: 2, cornerRadius: 0, fontSize: 0, borderColor: .black, backgroundColor: .white, viewWidth: width, viewHeight: height, frameX: 0.18, frameY: 0.29, width: 0.04, height: 0.02)
+        checkButton = buttonClass(titleString: "", titleColor: .white, imageName: "", borderWidth: 2, cornerRadius: 0, fontSize: 0, borderColor: .black, backgroundColor: .white, viewWidth: width, viewHeight: height, frameX: 0.18, frameY: 0.29, width: 0.04, height: 0.02)
         view.addSubview(checkButton)
         
         saveLabel = labelClass(textText: "Şifreyi Kaydet", borderWidth: 0, fontSize: 0.035, textAlgiment: .left, viewWidth: width, viewHeight: height, frameX: 0.33, frameY: 0.29, width: 0.24, height: 0.03)
         view.addSubview(saveLabel)
         
-        nextButton = buttonClass(titleString: "İleri", titleColor: .white, borderWidth: 1, cornerRadius: height * 0.05 / 5, fontSize: 0.04, borderColor: .blue, backgroundColor: .blue, viewWidth: width, viewHeight: height, frameX: 0.5, frameY: 0.35, width: 0.7, height: 0.05)
+        nextButton = buttonClass(titleString: "İleri", titleColor: .white, imageName: "", borderWidth: 1, cornerRadius: height * 0.05 / 5, fontSize: 0.04, borderColor: .blue, backgroundColor: .blue, viewWidth: width, viewHeight: height, frameX: 0.5, frameY: 0.35, width: 0.7, height: 0.05)
         nextButton.addTarget(self, action: #selector(nextClick), for: UIControl.Event.touchUpInside)
         view.addSubview(nextButton)
         
@@ -62,6 +64,24 @@ class PasswordVC: UIViewController {
     
     @objc func nextClick(){
         
-        performSegue(withIdentifier: "toEmailOrPhoneVC", sender: nil)
+        if passwordTextField.text != ""{
+            performSegue(withIdentifier: "toEmailOrPhoneVC", sender: nil)
+        }else{
+            self.present(alert(title: "Error!", message: "Password not nil!", buttonTitle: "Ok", controllerStyle: .alert, actionStyle: .default), animated: true, completion: nil)
+        }
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toEmailOrPhoneVC"{
+            
+            let destinationVC = segue.destination as! EmailOrPhoneVC
+            destinationVC.username = userName
+            destinationVC.password = passwordTextField.text!
+            
+        }
+        
+    }
+    
 }
